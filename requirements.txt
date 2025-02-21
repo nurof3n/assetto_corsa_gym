@@ -31,3 +31,6 @@ omegaconf
 wandb
 pygame
 numba
+pygetwindow
+opencv-python
+mss
