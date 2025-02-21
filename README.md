@@ -229,6 +229,22 @@ The images can be found in `<AC_installation_folder>`.
 
 ----
 
+## Citation
+
+If you find our work useful, please consider citing our paper as follows:
+
+```
+@inproceedings{aremondaNEURIPS2024,
+ title = {A Simulation Benchmark for Autonomous Racing with Large-Scale Human Data},
+ author = {Remonda, Adrian and Hansen, Nicklas and Raji, Ayoub and Musiu, Nicola and Bertogna, Marko and Veas, Eduardo and Wang, Xiaolong},
+ booktitle = {Conference on Neural Information Processing Systems (NeurIPS)},
+ year = {2024}
+}
+```
+
+----
+
+
 ## Contributing
 
 You are very welcome to contribute to this project. Feel free to open an issue or pull request if you have any suggestions or bug reports, but please review our [guidelines](CONTRIBUTING.md) first. Our goal is to build a codebase that can easily be extended to new environments and tasks, and we would love to hear about your experience!
