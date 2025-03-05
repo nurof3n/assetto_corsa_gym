@@ -20,7 +20,7 @@ Features:
 - Customizable Scenarios: Various cars, tracks, and weather conditions.
 - RL Integration: Compatible with Gym for easy application of RL algorithms.
 - [ROS2 interface](https://github.com/ayoubraji/assetto_corsa_ros2)
-- Baselines: Soft Actor-Critic ([SAC](https://arxiv.org/abs/1801.01290))(this code base) and TD-MPC2 (to be uploaded soon)
+- Baselines: Soft Actor-Critic ([SAC](https://arxiv.org/abs/1801.01290)) and [TD-MPC2](https://www.tdmpc2.com/) (to be uploaded soon)
 
 This repository contains all the necessary code to run the Gym interface for Assetto Corsa and RL benchmarks. For the ROS2 interface, refer to [ROS2 interface](https://github.com/ayoubraji/assetto_corsa_ros2)
 
