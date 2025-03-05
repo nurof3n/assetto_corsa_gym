@@ -8,7 +8,7 @@ Official implementation of the paper:
 
 
 [[Website]](https://assetto-corsa-gym.github.io/)  [[Dataset]](https://huggingface.co/datasets/dasgringuen/assettoCorsaGym) [[ROS2 interface]](https://github.com/ayoubraji/assetto_corsa_ros2) 
- [[Paper]]([https://arxiv.org/abs/2407.16680](https://proceedings.neurips.cc/paper_files/paper/2024/file/b91ea2ba1b6521940e204b7b81d5ef47-Paper-Datasets_and_Benchmarks_Track.pdf))
+ [[Paper]](https://proceedings.neurips.cc/paper_files/paper/2024/file/b91ea2ba1b6521940e204b7b81d5ef47-Paper-Datasets_and_Benchmarks_Track.pdf)
 
 ----
 
