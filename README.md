@@ -8,7 +8,7 @@ Official implementation of the paper:
 
 
 [[Website]](https://assetto-corsa-gym.github.io/)  [[Dataset]](https://huggingface.co/datasets/dasgringuen/assettoCorsaGym) [[ROS2 interface]](https://github.com/ayoubraji/assetto_corsa_ros2) 
- [[Paper]](https://arxiv.org/abs/2407.16680)
+ [[Paper]]([https://arxiv.org/abs/2407.16680](https://proceedings.neurips.cc/paper_files/paper/2024/file/b91ea2ba1b6521940e204b7b81d5ef47-Paper-Datasets_and_Benchmarks_Track.pdf))
 
 ----
 
@@ -20,7 +20,7 @@ Features:
 - Customizable Scenarios: Various cars, tracks, and weather conditions.
 - RL Integration: Compatible with Gym for easy application of RL algorithms.
 - [ROS2 interface](https://github.com/ayoubraji/assetto_corsa_ros2)
-- Baselines: Soft Actor-Critic ([SAC](https://arxiv.org/abs/1801.01290)) and [TD-MPC2](https://www.tdmpc2.com/) (to be uploaded soon)
+- Baselines: [SAC](https://arxiv.org/abs/1801.01290), [TD-MPC2](https://www.tdmpc2.com/) and [IQL](https://arxiv.org/abs/2110.06169)
 
 This repository contains all the necessary code to run the Gym interface for Assetto Corsa and RL benchmarks. For the ROS2 interface, refer to [ROS2 interface](https://github.com/ayoubraji/assetto_corsa_ros2)
 
