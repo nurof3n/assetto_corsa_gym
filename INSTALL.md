@@ -65,6 +65,62 @@ The **Custom Shaders Patch** is required to restart the car.
 
 ---
 
+
+### **1.5 Install Extra Dependencies**  
+
+#### **Step 1: Install Python 3.3.5**  
+Assetto Corsa uses **Python 3.3.5**, and since its built-in distribution **cannot be modified**, we need to install the same version externally. This is required to install additional packages needed to **spawn the new interpreter (3.9+)** and **establish communication between both processes**.  
+
+🔗 **[Download Python 3.3.5](http://www.python.org/ftp/python/3.3.5/python-3.3.5.amd64.msi)**  
+
+- Install it in `C:\Python33\`.  
+- During installation, check **"Add Python to PATH"**.  
+
+#### **Step 2: Set Up `pip` for Python 3.3**  
+```sh
+curl https://bootstrap.pypa.io/pip/3.3/get-pip.py -o get-pip.py
+C:\Python33\python get-pip.py
+```
+#### **Step 3: Install `pywin32`**  
+- Download and Install manually:  
+  🔗 [Download pywin32-221](https://sourceforge.net/projects/pywin32/files/pywin32/Build%20221/pywin32-221.win-amd64-py3.3.exe/download)  
+
+---
+
+### **1.6: (Optional) Install Additional Dependencies When Using Images**  
+Install Additional Dependencies in Your Current Environment (Python 3.9+).  
+
+- Install the required dependencies in your **current Python 3.9+ environment**:  
+
+
+```sh
+conda activate p309
+pip install mss pygetwindow opencv-python
+```  
+
+- If your `p309` interpreter is **not in the default path**, set it manually in `<sensor_par>/config.py`:
+
+```python
+self.config_python_executable = r"C:\Users\<user>\anaconda3\envs\p309\python.exe"
+```
+
+- Enable screen capture in `<sensor_par>/config.py`:
+
+```python
+self.screen_capture_enable = True
+self.screen_capture_save_to_disk = True
+```
+
+If image saving is enabled, you should see images in:
+
+```sh
+C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\captures
+```
+
+---
+
+
+
 ## **2. Configuring Assetto Corsa**  
 
 ### **2.1 Enable the Plugin**  
@@ -149,55 +205,7 @@ screen_capture_enable: True
 
 ---
 
-### **4.3 Install Required Dependencies**  
 
-#### **Step 1: Install Python 3.3.5**  
-Assetto Corsa uses **Python 3.3.5**, and since its built-in distribution **cannot be modified**, we need to install the same version externally. This is required to install additional packages needed to **spawn the new interpreter (3.9+)** and **establish communication between both processes**.  
-
-🔗 **[Download Python 3.3.5](http://www.python.org/ftp/python/3.3.5/python-3.3.5.amd64.msi)**  
-
-- Install it in `C:\Python33\`.  
-- During installation, check **"Add Python to PATH"**.  
-
-#### **Step 2: Set Up `pip` for Python 3.3**  
-```sh
-curl https://bootstrap.pypa.io/pip/3.3/get-pip.py -o get-pip.py
-C:\Python33\python get-pip.py
-```
-#### **Step 3: Install `pywin32`**  
-- Download and install manually:  
-  🔗 [Download pywin32-221](https://sourceforge.net/projects/pywin32/files/pywin32/Build%20221/pywin32-221.win-amd64-py3.3.exe/download)  
-
-
-#### **Step 4: Install Additional Dependencies in Your Current Environment (Python 3.9+)**  
-- Install the required dependencies in your **current Python 3.9+ environment**:  
-
-```sh
-conda activate p309
-pip install mss pygetwindow opencv-python
-```  
-
-- If your `p309` interpreter is **not in the default path**, set it manually in `<sensor_par>/config.py`:
-
-```python
-self.config_python_executable = r"C:\Users\<user>\anaconda3\envs\p309\python.exe"
-```
-
-#### **Step 5: Check That It Works**  
-Enable screen capture in `<sensor_par>/config.py`:
-
-```python
-self.screen_capture_enable = True
-self.screen_capture_save_to_disk = True
-```
-
-If image saving is enabled, you should see images in:
-
-```sh
-C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\captures
-```
-
----
 
 ## **5. Debugging & Logs**  
 - To modify the plugin without exiting Assetto Corsa completely, you can leave the Assetto Corsa Launcher running or use Content Manager.
