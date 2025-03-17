@@ -111,8 +111,6 @@ We base our SAC code on [this](https://github.com/toshikwa/discor.pytorch) imple
         - Start Assetto Corsa and set the new track.
         - Run `assetto_corsa_gym/AssettoCorsaConfigs/tracks/generate_track.ipynb` to create a new track. This script creates a pickle file with the occupancy grid, downloads the AC reference path, and visualizes the track. Make sure to update the `assetto_corsa_gym/AssettoCorsaConfigs/tracks/config.yaml` file.
 
-
-
 ## Demos
 - **test_client.ipynb**
   - Demonstrates the use of the Assetto Corsa Sim interface (client) without the OpenAI Gym interface layer.
@@ -123,6 +121,8 @@ We base our SAC code on [this](https://github.com/toshikwa/discor.pytorch) imple
 
 ## Benchmarks
 Experiments and parameters are configured via `config.yml` and executed with `python train.py`. Optionally, a different config file can be specified using `python train.py config=<config_file>`. To enable logging to Weights and Biases, appropriate values should be set in the config file. Each parameter in the config file can be modified directly from the terminal using `<field>=<value>`. For instance, to change the car, use `AssettoCorsa.car=<car>`.
+**IMPORTANT: When training, use the lowest resolution in Assetto Corsa, lower all graphics settings, and avoid full-screen mode. Close all applications, as network traffic or background applications can cause jitter, especially on slow hardware. Content Manager is useful for creating different profiles.**
+
 
   - **Example policy for Monza and the GT3 car**
 

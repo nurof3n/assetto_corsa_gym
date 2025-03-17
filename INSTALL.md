@@ -123,6 +123,9 @@ C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\captures
 
 ## **2. Configuring Assetto Corsa**  
 
+**IMPORTANT: When training RL agents, use the lowest resolution in Assetto Corsa, lower all graphics settings, and avoid full-screen mode. Close all applications, as network traffic or background applications can cause jitter, especially on slow hardware. Content Manager is useful for creating different profiles.**
+
+
 ### **2.1 Enable the Plugin**  
 1. Open **Assetto Corsa**  
 2. Go to **Options > General > UI Modules**  
