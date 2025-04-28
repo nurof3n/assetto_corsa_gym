@@ -103,3 +103,19 @@ class GaussianPolicy(BaseNetwork):
         entropies = -log_probs.sum(dim=1, keepdim=True)
 
         return actions, entropies, torch.tanh(means)
+
+
+class DeterministicPolicy(BaseNetwork):
+    def __init__(self, state_dim, action_dim, hidden_units=[256, 256]):
+        super().__init__()
+
+        self.net = create_linear_network(
+            input_dim=state_dim,
+            output_dim=action_dim,
+            hidden_units=hidden_units
+        )
+
+    def forward(self, states):
+        # Calculate deterministic actions
+        actions = torch.tanh(self.net(states))
+        return actions

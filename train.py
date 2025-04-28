@@ -1,32 +1,32 @@
-import os
-import sys
-import argparse
-import logging
-from datetime import datetime
-from pathlib import Path
-import copy
-from omegaconf import OmegaConf
-import torch
-
 # Add paths
+import sys
+import os
 sys.path.extend([os.path.abspath('./assetto_corsa_gym'), './algorithm/discor'])
 
-# Custom module imports
+import torch
+from omegaconf import OmegaConf
+import copy
+from pathlib import Path
+from datetime import datetime
+import logging
+import argparse
 import AssettoCorsaEnv.assettoCorsa as assettoCorsa
 import AssettoCorsaEnv.data_loader as data_loader
-from discor.algorithm import SAC, DisCor
+from discor.algorithm import SAC, DisCor, TD3
 from discor.agent import Agent
 import common.misc as misc
 import common.logging_config as logging_config
 from common.logger import Logger
 
+
 logger = logging.getLogger(__name__)
+
 
 def parse_args(hardcode=None):
     parser = argparse.ArgumentParser(description="Description of your program.")
     parser.add_argument("--config", default="config.yml", type=str, help="Path to configuration file")
     parser.add_argument("--load_path", type=str, default=None, help="Path to load the model from (default: None)")
-    parser.add_argument("--algo", type=str, default="sac", help="Algorithm type (default: sac)")
+    parser.add_argument("--algo", type=str, default="sac", help="Algorithm type: sac (default), discor, td3")
     parser.add_argument("--test", action="store_true")
     parser.add_argument("overrides", nargs=argparse.REMAINDER, help="Any key=value arguments to override config values")
     if hardcode is not None:
@@ -35,6 +35,7 @@ def parse_args(hardcode=None):
         args = parser.parse_args()
     args.load_path = os.path.abspath(args.load_path) + os.sep if args.load_path is not None else None
     return args
+
 
 def main():
     args = parse_args()
@@ -84,9 +85,14 @@ def main():
             action_dim=env.action_space.shape[0],
             device=device, seed=config.seed,
             **OmegaConf.to_container(config.SAC))
+    elif args.algo == 'td3':
+        algo = TD3(
+            state_dim=env.observation_space.shape[0],
+            action_dim=env.action_space.shape[0],
+            device=device, seed=config.seed,
+            **OmegaConf.to_container(config.TD3))
     else:
         raise Exception('You need to set algo sac or discor')
-
 
     # Update the logger configuration with dynamic values
     config.exp_name = f'{config.AssettoCorsa.car}-{config.AssettoCorsa.track}'
@@ -140,6 +146,7 @@ def main():
     else:
         agent.run()
         logger.info("done training")
+
 
 if __name__ == "__main__":
     main()
