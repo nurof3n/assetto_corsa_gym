@@ -114,7 +114,7 @@ class AssettoCorsaEnv(Env, gym_utils.EzPickle):
 
     cars = [
         "dallara_f317",
-        #"bmw_z4_gt3"
+        "bmw_z4_gt3"
     ]
 
     obs_channels_info = {

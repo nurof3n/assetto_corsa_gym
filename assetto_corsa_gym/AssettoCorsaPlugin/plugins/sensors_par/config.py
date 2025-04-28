@@ -24,7 +24,7 @@ class Config(object):
         self.config_python_env_name = "p309"
         # config_python_executable: If provided, uses this path; if None, builds it as:
         #   "<user_home>\AppData\Local\anaconda3\envs\<env_name>\python.exe"
-        self.config_python_executable = None
+        self.config_python_executable = "D:\\Programs\\miniconda3\\envs\\" + self.config_python_env_name + "\\python.exe"
         self.screen_capture_worker = "screen_capture_worker.py"
 
         # signal events

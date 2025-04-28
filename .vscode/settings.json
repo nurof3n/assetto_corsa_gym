@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./assetto_corsa_gym",
+        "./algorithm/discor"
+    ]
+}

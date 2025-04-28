@@ -1,13 +1,13 @@
-load_offline_data: False    # offline pre-training and data loading
-pre_train: False            # pre train using offline data before start online training
-dataset_path: null          # Path to the datasets, null means it will be overridden by the command line if needed
-work_dir: null              # Path to run the model from (default: None)
+load_offline_data: False # offline pre-training and data loading
+pre_train: False # pre train using offline data before start online training
+dataset_path: null # Path to the datasets, null means it will be overridden by the command line if needed
+work_dir: null # Path to run the model from (default: None)
 task: AssettoCorsaEnv
 seed: 0
 
 # wandb
 disable_wandb: True
-wandb_entity: null  # user
+wandb_entity: null # user
 wandb_project: sac
 wandb_silent: False
 exp_name: null
@@ -15,7 +15,7 @@ task_title: null
 save_csv: True
 save_video: False
 save_agent: False
-action_dim: null  # placeholder
+action_dim: null # placeholder
 steps: null # placeholder
 
 Agent:
@@ -37,24 +37,24 @@ SAC:
   policy_lr: 0.0003
   q_lr: 0.0003
   entropy_lr: 0.0003
-  policy_hidden_units: [256, 256, 256]
-  q_hidden_units: [256, 256, 256]
+  policy_hidden_units: [ 256, 256, 256 ]
+  q_hidden_units: [ 256, 256, 256 ]
   target_update_coef: 0.005
   log_interval: 10
 
 DisCor:
   error_lr: 0.0003
-  error_hidden_units: [256, 256, 256, 256]
+  error_hidden_units: [ 256, 256, 256, 256 ]
   tau_init: 10.0
 
 AssettoCorsa:
-  ego_sampling_freq: 25     # in Hz
-  max_episode_py_time: 600. # in seconds
+  ego_sampling_freq: 25 # in Hz
+  max_episode_py_time: 600 # in seconds
   train_steps: 10_000_000
-  gap_const: 12.
-  eval_number_of_laps: 4    # including out lap which is incomplete
+  gap_const: 12
+  eval_number_of_laps: 4 # including out lap which is incomplete
   save_lap_csv: False
-  remote_machine_ip: "localhost"   # "192.168.0.1" # "localhost"
+  remote_machine_ip: "localhost" # "192.168.0.1" # "localhost"
   ego_server_port: 2345
   opponents_server_port: 2346
   simulation_management_server_port: 2347
@@ -71,8 +71,8 @@ AssettoCorsa:
   enable_task_id_in_obs: False
   penalize_actions_diff: False
   penalize_actions_diff_coef: 0.1
-  track: "ks_barcelona-layout_gp"  # monza ks_barcelona-layout_gp ks_red_bull_ring-layout_gp, indianapolis_sp, ks_silverstone-gp
-  car: "dallara_f317"              # dallara_f317, ks_mazda_miata, bmw_z4_gt3
+  track: "ks_red_bull_ring-layout_gp" # monza ks_barcelona-layout_gp ks_red_bull_ring-layout_gp, indianapolis_sp, ks_silverstone-gp
+  car: "bmw_z4_gt3" # dallara_f317, ks_mazda_miata, bmw_z4_gt3
   use_ac_out_of_track: True
   add_previous_obs_to_state: True
   use_reference_line_in_reward: True
@@ -80,6 +80,6 @@ AssettoCorsa:
   screen_capture_enable: False
   # This should be a multiple of the resolution set in Assetto Corsa to avoid cropping and padding
   # AC configured Using 640x480
-  final_image_width: 320      # Final image width in pixels
-  final_image_height: 240     # Final image height in pixels
-  color_mode: "gray"           # Options: "gray" or "bgr"
+  final_image_width: 320 # Final image width in pixels
+  final_image_height: 240 # Final image height in pixels
+  color_mode: "gray" # Options: "gray" or "bgr"

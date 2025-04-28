@@ -1,4 +1,8 @@
-<h1>Assetto Corsa Gym</span></h1>
+<h1>Assetto Corsa Gym</h1>
+
+>**Notice**: This repository fork represents my experiments with the tool and aims to integrate a new AI model
+>that I am developing. The original repository is maintained by [dasGringuen](https://github.com/dasGringuen) et al.
+>Kudos to them for their work!
 
 Official implementation of the paper:
 [A Simulation Benchmark for Autonomous Racing with Large-Scale Human Data](https://assetto-corsa-gym.github.io/)
@@ -179,9 +183,6 @@ The images can be found in `<AC_installation_folder>`.
 
 <img src="docs/teaser_images.png" alt="Teaser Image" width="400">
 
-
-
-
 ## Download Datasets
 
 - Currently supported tracks:
@@ -191,28 +192,19 @@ The images can be found in `<AC_installation_folder>`.
   - Oval: `indianapolis_sp`
   - Silverstone: `ks_silverstone-gp`<br><br>
 
-
-
 - To download everything at once (120GB):
 
   ```python
-  git clone https://huggingface.co/datasets/dasgringuen/assettoCorsaGym
+  git clone --depth 1 https://huggingface.co/datasets/dasgringuen/assettoCorsaGym
   # After cloning, delete the .git directory to free up space
   ```
 
-- To download one track and car combination at a time, run the following replacing <track> and <car>:
+- To download one track and car combination at a time, run this [script](download_dataset.py), after you have changed
+it to select the desired track and car:
 
-  ```python
-  from huggingface_hub import snapshot_download
-
-  snapshot_download(
-      repo_id="dasgringuen/assettoCorsaGym",
-      repo_type="dataset",
-      local_dir="AssettoCorsaGymDataSet",
-      allow_patterns="data_sets/<track>/<car>/*"
-  )
+  ```bash
+  python download_dataset.py
   ```
-
 
   Hugging Face is currently having some false positives in their dataset checking due to a security issue with pickle files importing numpy:
 
@@ -225,7 +217,6 @@ The images can be found in `<AC_installation_folder>`.
   ```
 
   Hugging Face flags these for security reasons. You can see more about this in the issue [here](https://github.com/dasGringuen/assetto_corsa_gym/issues/5). We plan to convert the files to a safer format like Parquet in the future.<br><br>
-
 
 ----
 

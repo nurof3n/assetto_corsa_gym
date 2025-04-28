@@ -11,24 +11,16 @@ vJoy is required to send commands to Assetto Corsa.
 
 ---
 
-### **1.2 Copy the Plugin Files**  
-1. Locate the plugin folder in this repository:  
-   ```sh
-   .\assetto_corsa_gym\AssettoCorsaPlugin\plugins\sensors_par
-   ```
-2. Copy this folder to the Assetto Corsa installation directory under `apps\python\`.  
-   - The default AC installation path is:  
-     ```sh
-     C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\
-     ```
-3. The final destination should look like this:  
-   ```sh
-   C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\apps\python\sensor_par
-   ```
+### **1.2 Copy the Plugin Files**
+
+1. Locate the [plugin](assetto_corsa_gym/AssettoCorsaPlugin/plugins/sensors_par) folder in this repository
+2. Glance over the `config.py` file and adjust the settings if needed
+3. Copy this folder to the Assetto Corsa installation directory under `apps\python\`
 
 ---
 
-### **1.3 Install Configuration Files**  
+### **1.3 Install Configuration Files**
+
 Copy the necessary configuration files from:  
 ```sh
 assetto_corsa_gym\AssettoCorsaPlugin\windows-libs
@@ -144,26 +136,26 @@ C:\Program Files (x86)\Steam\steamapps\common\assettocorsa\captures
 - **Mode:** `Challenge > Hotlap`  
 
 ### **2.5 Adjust Driving Assists**  
-| Setting                   | Recommended Value |
-|---------------------------|------------------|
-| Automatic Gearbox         | **ON** |
-| Ideal Racing Line         | **As Preferred** |
-| Automatic Clutch          | **Enabled** |
-| Automatic Throttle Blip   | **Disabled** |
-| Traction Control          | **OFF** |
-| Stability Control         | **OFF** |
-| Mechanical Damage         | **OFF** |
-| Tyre Blankets             | **ON** |
-| ABS                       | **OFF** |
-| Fuel Consumption          | **OFF** |
-| Tyre Wear                 | **OFF** |
-| Slipstream Effect         | **1x** |
-| Time of Day               | **10:00 AM** |
-| Weather                  | **Mid Clear** |
-| Ambient Temperature       | **26°C** |
-| Time Multiplier           | **1x** |
-| Track Surface             | **Optimum** |
-| Penalties                 | **ON** |
+| Setting                 | Recommended Value |
+| ----------------------- | ----------------- |
+| Automatic Gearbox       | **ON**            |
+| Ideal Racing Line       | **As Preferred**  |
+| Automatic Clutch        | **Enabled**       |
+| Automatic Throttle Blip | **Disabled**      |
+| Traction Control        | **OFF**           |
+| Stability Control       | **OFF**           |
+| Mechanical Damage       | **OFF**           |
+| Tyre Blankets           | **ON**            |
+| ABS                     | **OFF**           |
+| Fuel Consumption        | **OFF**           |
+| Tyre Wear               | **OFF**           |
+| Slipstream Effect       | **1x**            |
+| Time of Day             | **10:00 AM**      |
+| Weather                 | **Mid Clear**     |
+| Ambient Temperature     | **26°C**          |
+| Time Multiplier         | **1x**            |
+| Track Surface           | **Optimum**       |
+| Penalties               | **ON**            |
 
 ---
 
