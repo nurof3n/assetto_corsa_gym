@@ -256,7 +256,11 @@ class Agent:
                 while (not done):
                     action, entropies = self._algo.exploit(state)
                     next_state, reward, done, info = self._test_env.step(action)
-                    self._test_env.states[-1]["entropies"] = entropies.cpu().numpy().item()
+                    # Check if entropies is already a float or if it's a tensor before applying tensor methods
+                    if isinstance(entropies, float):
+                        self._test_env.states[-1]["entropies"] = entropies
+                    else:
+                        self._test_env.states[-1]["entropies"] = entropies.cpu().numpy().item()
                     episode_return += reward
                     state = next_state
                 total_return += episode_return
